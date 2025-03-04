@@ -82,10 +82,19 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('i', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('i', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('i', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('i', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+
+-- Lua run Keybinds
+vim.keymap.set('n', '<leader><leader>x', ':source %<CR>')
+vim.keymap.set('n', '<leader>x', ':lua<CR>')
+vim.keymap.set('v', '<leader>x', ':lua<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -138,7 +147,7 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'nvim-lua/plenary.nvim',
 
-  require 'kickstart.plugins.lazydev',
+  -- require 'kickstart.plugins.lazydev',
   require 'kickstart.plugins.which-key',
   require 'kickstart.plugins.todo-comments',
   require 'kickstart.plugins.nvim-lspconfig',
@@ -157,6 +166,8 @@ require('lazy').setup({
   require 'kickstart.plugins.telescope',
   -- require 'kickstart.plugins.typr',
   require 'kickstart.plugins.flash',
+  require 'kickstart.plugins.node-notes',
+  require 'kickstart.plugins.oil',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
